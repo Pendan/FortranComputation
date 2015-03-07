@@ -4,7 +4,7 @@ REAL(KIND(0.D0)),PARAMETER :: PI4=ACOS(SQRT(2.D0)/2.D0)
 REAL :: CASU,SUMMA=0.D0,ERRORE=0.D0,SUMMA1=0.D0
 INTEGER :: I=0
 
-WRITE (*,*) "Inserire numero di iterazioni:"
+WRITE (*,"(A)",ADVANCE="NO") "Inserire numero di iterazioni:"
 
 IF (I.LE.0) THEN
 	READ (*,*) I
