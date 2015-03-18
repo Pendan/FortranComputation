@@ -384,5 +384,5 @@ END IF
 
 2 WRITE(*,*)
 
-call system('clear')
+call system('clear && ls')
 END PROGRAM

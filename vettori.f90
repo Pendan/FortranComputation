@@ -1,0 +1,33 @@
+PROGRAM VETTORI
+IMPLICIT NONE
+
+! Definiamo un vettore ed una matrice di interi, fino a 7 dimensioni
+INTEGER :: VECT(1000), MAT(70,100), EXAGG(10,20,30,42,50,60,70)
+
+! NOTA BENE: Il promeo elemnento è vect(1), l'ultimo è vect(100), non come in C che si comincia dallo zero.
+! Matrici (righe,colonne)
+
+! Possiamo specificare il range degli indici
+
+INTEGER :: VC(-7:30), MA(0:30,7:42)
+
+! Per assegnare roba a più indici del vettore
+
+VECT(20:23)=1.
+
+! Per assegnare roba a tutti gli indici del vettore
+VECT=1.
+
+MAT(0:20,7:40)=0.
+
+
+
+
+
+
+
+
+
+
+
+END PROGRAM
