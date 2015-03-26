@@ -19,7 +19,7 @@ REAL(KIND(0.D0)), ALLOCATABLE :: CASU_VECT(:),FUN_VECT(:)
 INTEGER SUBSET_M ! Numero di elemnti nei sottoinsiemi
 
 1 call system('clear')
-call system('bash')
+
 CON=0
 SUMMA=0.D0
 ERRORE=0.D0
