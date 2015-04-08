@@ -1,0 +1,14 @@
+PROGRAM PEPPE
+	implicit none
+	integer :: first, second
+
+	first=7; second=3;
+		call subtract(first,second,result)
+		write (*,*) firs,second,result
+
+end program peppe
+
+subroutine subtract(magg,mino,ris)
+		integer ::magg,mino,ris
+			ris=magg-mino
+end subroutine subtract

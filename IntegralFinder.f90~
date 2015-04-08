@@ -4,9 +4,9 @@
 !*  Di Daniele Scarinci                          *
 !*  daniele.scarinci@studenti.unicam.it          *
 !*                                               *
-!*  Il programma è stato realizzato sotto Linux  *
-!*  alcune cose potrebbe risultare leggermente   *
-!*  diverse su un sistema windows                *
+!* Il programma è stato realizzato usando Linux, *
+!* qualche lettera accentata potrebbe causare    *
+!* problemi su di un pc con windows              *
 !*                                               *
 !*************************************************
 
@@ -58,7 +58,7 @@ DO WHILE(CON.LE.0)
 END DO
 
 !Controlla se è dispari, in caso affermativo aggiunge uno al valore 
-!(stiamo trattando con intervalliF)
+!(stiamo lavorando con gli intervalli)
 
 PARI=MOD(CON+1,2)
 IF (PARI.EQ.0) THEN
@@ -91,7 +91,7 @@ call system('clear')
 
 
 
-! Esecuzione subroutine Metodo di Montecarlo
+! Esecuzione modalità Metodo di Montecarlo
 
 IF (SCELTA.EQ.1) THEN
 SUMMA=0.D0
@@ -110,7 +110,7 @@ GOTO 1
 
 
 
-! Esecuzione subroutine Metodo Rettangoli
+! Esecuzione modalità Metodo Rettangoli
 
 else IF (SCELTA.EQ.2) THEN
 
@@ -130,7 +130,7 @@ GOTO 1
 
 
 
-! Esecuzione subroutine Metodo dei trapezi
+! Esecuzione modalità Metodo dei trapezi
 
 else IF (SCELTA.EQ.3) THEN
 
@@ -150,7 +150,7 @@ GOTO 1
 
 
 
-! Esecuzione subroutine Metodo di Cavalieri Simpson
+! Esecuzione modalità Metodo di Cavalieri Simpson
 
 else IF (SCELTA.EQ.4) THEN
 SUMMA=0.D0
@@ -169,7 +169,7 @@ GOTO 1
 
 
 
-! sguo il confronto tra i vari metodi chiamando a turno tutte le subroutine
+! eseguo il confronto tra i vari metodi chiamando a turno tutte le subroutine
 
 else IF (SCELTA.EQ.5) THEN
 
@@ -387,7 +387,7 @@ deallocate(casu)
 end function MC_CAVSIMP
 
 
-! Funzione che fornisce la funzione di cui vogliamo calcolare l'integrale
+! Funzione che restituisce la funzione di cui vogliamo calcolare l'integrale
 
 
 function my_funct(x)
@@ -395,7 +395,7 @@ function my_funct(x)
 	Real(kind(0.d0)) :: my_funct
 	Real(kind(0.d0)), Intent(in) :: x
 
-		!Cambiare questa per cambiare la funzione da integrale (deve essere una funzione definita positiva)
+		!Cambiare questa per cambiare la funzione da integrare
 
 		my_funct=x**2.d0
 

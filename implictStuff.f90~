@@ -1,0 +1,5 @@
+implicit real(kind(0.D0)) (a-h,o-z)
+! Vecchi fortran implicit real*8 (a-h,o-z)
+! Gli dice di usare 8 byte praticamente
+
+

@@ -1,0 +1,61 @@
+module utility
+	implicit none
+	integer,parameter :: dp=kind(0.d0)
+	integer :: gatto
+	integer, private :: gatto_timido !questo c'è solo all'interno della routine
+
+	contains
+
+		subroutine subtract(magg,mino,ris)
+			implicit none
+			integer,intent(in) :: mino
+			integer,intent(out):: ris
+			integer,optional,intent(in)::magg
+
+			gatto_timido=24
+			if(present(magg)) then
+				ris=magg-mino
+			else
+				ris=mino
+			end if
+			write(*,*) 'gatto del modulo? ', gatto, '!'
+			write(*,*) 'gatto timido del modulo? ', gatto_timido, '!'
+		end subroutine subtract
+
+end module utility
+
+
+PROGRAM PEPPE
+	use utility
+	implicit none
+	integer :: first, second,results,gatto_timido
+
+
+	!definiamo l'interface perché altrimenti il compilatore rompe il volgarissimo pene
+
+! Nel caso non avessimo usato module
+!	interface
+!	subroutine subtract(magg,mino,ris)
+!		integer,intent(in) :: mino
+!		integer,intent(out):: ris
+!		integer,optional,intent(in)::magg
+!	end subroutine subtract
+!	end interface
+
+
+! Definita dal modulo è cnosciuta ovunque
+	gatto=42
+	gatto_timido=2442
+
+	first=7; second=3;
+		call subtract(first,second,results)
+		write (*,*) first,second,results
+		call subtract(ris=results,mino=3,magg=9)
+		write (*,*) 9,3,results
+		call subtract(ris=results,mino=3)
+		write (*,*) second,results
+		write(*,*) 'gatto programma? ', gatto, '!'
+		write(*,*) 'gatto timido programma? ', gatto_timido, '!'
+
+end program peppe
+
