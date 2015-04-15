@@ -40,8 +40,8 @@ PROGRAM INTEGRALE_GAUSSIANA_PER_IMPORTANZA_IN_0_B
 
 ! Come lavorare con i file (formatted lo metto in a human readable format)
 
-        READ(*,*) my_file
-        OPEN(UNIT=1,FILE=my_file,STATUS="UNKNOWN",FORM="FORMATTED",ACCESS="SEQUENTIAL")
+42      READ(*,*) my_file
+        OPEN(UNIT=1,FILE=my_file,STATUS="UNKNOWN",FORM="FORMATTED",ACCESS="SEQUENTIAL",ACTION="READWRITE",POSITION="ASIS",RECL=7,ERR=42)
 
 1	WRITE(6,2, ADVANCE='NO')
 2	FORMAT(6X,'Please enter integral upper extremum (lower = 0) and number of intervals: ')

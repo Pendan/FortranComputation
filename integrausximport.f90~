@@ -41,7 +41,7 @@ PROGRAM INTEGRALE_GAUSSIANA_PER_IMPORTANZA_IN_0_B
 ! Come lavorare con i file (formatted lo metto in a human readable format)
 
         READ(*,*) my_file
-        OPEN(UNIT=1,FILE=my_file,STATUS="UNKNOWN",FORM="FORMATTED",ACCESS="SEQUENTIAL")
+        OPEN(UNIT=1,FILE=my_file,STATUS="UNKNOWN",FORM="FORMATTED",ACCESS="SEQUENTIAL",ACTION="READWRITE",POSITION="ASIS",RECL=7)
 
 1	WRITE(6,2, ADVANCE='NO')
 2	FORMAT(6X,'Please enter integral upper extremum (lower = 0) and number of intervals: ')
@@ -93,8 +93,8 @@ PROGRAM INTEGRALE_GAUSSIANA_PER_IMPORTANZA_IN_0_B
 				&/SQRT(1.D0* N_POINTS_PER_INTERVAL)
 	 TOTAL_ERROR		= SQRT(ABS(TOTAL_SUM_OF_SQUARES/(I*N_POINTS_PER_INTERVAL) - (TOTAL_INTEGRAL**2.D0))) &
 				&/SQRT(1.D0*I*N_POINTS_PER_INTERVAL)
-	 WRITE(*,*)'Integral in ', X_LOW, X_UP, ':', PARTIAL_INTEGRAL, 'error:', PARTIAL_ERROR
-	 WRITE(*,*)'Integral in ', LOWER_LIMIT, X_UP, ':', TOTAL_INTEGRAL, 'error:', TOTAL_ERROR
+	 WRITE(1,*)'Integral in ', X_LOW, X_UP, ':', PARTIAL_INTEGRAL, 'error:', PARTIAL_ERROR
+	 WRITE(1,*)'Integral in ', LOWER_LIMIT, X_UP, ':', TOTAL_INTEGRAL, 'error:', TOTAL_ERROR
 	END DO
 	
 	 
